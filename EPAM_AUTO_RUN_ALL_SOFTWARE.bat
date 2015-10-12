@@ -4,6 +4,10 @@
 :: CREATED ON: 2015/10/09								::
 :: =====================================================::
 
+
+:: WAIT 5 SECONDS FOR OS STARTUP
+TIMEOUT /t 5
+
 :: DIRECT TO WORK FOLDER
 D:
 cd "src\hkgta\sino-hkgta-fe"
