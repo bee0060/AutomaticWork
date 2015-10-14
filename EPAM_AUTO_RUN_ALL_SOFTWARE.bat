@@ -23,6 +23,7 @@ START "" "D:\Develop Tools\Sublime Text 2\sublime_text.exe"
 START /max /low "" "https://jirapct.epam.com/jira/secure/RapidBoard.jspa?rapidView=35866&view=planning.nodetail"
 START /max /low "" "https://translate.google.com/?hl=zh-CN&tab=TT"
 START /max /low "" "https://pmcpct.epam.com/pmc/login.do"
+START /max /low "" "https://jirapct.epam.com/jira/secure/Dashboard.jspa?selectPageId=41705"
 
 :: OPEN THE DEV PAGE ENV
 START /max /low "" "http://localhost/#/"  --new-window
