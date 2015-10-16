@@ -9,7 +9,7 @@
 TIMEOUT /t 5
 
 :: DIRECT TO WORK FOLDER
-D:
+cd D:\
 cd "src\hkgta\sino-hkgta-fe"
  
 
