@@ -20,13 +20,13 @@ START "" "D:\Develop Support\Git\Bin\sh.exe" --login -i
 START "" "D:\Develop Tools\Sublime Text 2\sublime_text.exe"
 
 :: OPEN THE WEB PAGES ARE NEED
-START /max /low "" "https://jirapct.epam.com/jira/secure/RapidBoard.jspa?rapidView=35866&view=planning.nodetail"
-START /max /low "" "https://translate.google.com/?hl=zh-CN&tab=TT"
-START /max /low "" "https://pmcpct.epam.com/pmc/login.do"
-START /max /low "" "https://jirapct.epam.com/jira/secure/Dashboard.jspa?selectPageId=41705"
+START /max "" "https://jirapct.epam.com/jira/secure/RapidBoard.jspa?rapidView=35866&view=planning.nodetail"
+START /max "" "https://translate.google.com/?hl=zh-CN&tab=TT"
+START /max "" "https://pmcpct.epam.com/pmc/login.do"
+START /max "" "https://jirapct.epam.com/jira/secure/Dashboard.jspa?selectPageId=41705"
 
 :: OPEN THE DEV PAGE ENV
-START /max /low "" "http://localhost/#/"  --new-window
+START /max "" "http://localhost/#/"  --new-window
 
 :: OPEN THE PERSONAL SOFTWARE
 START "" "D:\Program Files (x86)\Tencent\QQ\Bin\QQScLauncher.exe"
