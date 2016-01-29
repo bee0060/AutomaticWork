@@ -26,3 +26,15 @@
 而且可以执行命令行这些不好放在开机启动文件夹里的东西。
 
 总结： OH YEAH。
+
+----- 2016.01.29 ----- 
+
+上一个项目结束，现在到新项目对命令稍作修改，现在要打开的软件包括：
+
+1.outlook 
+
+2.sublime text 
+
+3.chrome - jira/pmc/google translate 
+
+4.QQ 
