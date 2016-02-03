@@ -33,6 +33,7 @@ echo.    blank will use the first profiles in project's application.yml:
 set /p profiles=
 echo.
 
+set manualWaitRedisBoot=D
 set /p manualWaitRedisBoot=Do you need to wait for redis' boot manually? If your PC is slow, please enter Y.(Y/N, defualt as N):
 echo.
 echo.
@@ -90,9 +91,11 @@ cd imaibo-stockmarket
 START cmd /C node app.js local
 cd ..
 
-If /I %manualWaitRedisBoot% == Y (
-	echo Please press any key when your redis has boot.
-	PAUSE
+If defined manualWaitRedisBoot (
+	If /I %manualWaitRedisBoot% == Y (
+		echo Please press any key when your redis has boot.
+		PAUSE
+	)
 )
 
 
