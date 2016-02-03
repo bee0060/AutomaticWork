@@ -13,7 +13,7 @@ echo.
 echo ---------------------------------------------------------------------
 echo.
 echo Please be sure imaibo-fe, imaibo-stockmarket, imaibo-portfolio project and redis DB（\Redis-x64-2.8.2101 folder）are in the same root folder, e.g.:
-echo \imaibo
+echo \root
 echo   \imaibo-fe
 echo   \imaibo-stockmarket
 echo   \imaibo-portfolio
@@ -22,7 +22,7 @@ echo  ---------------------------------------------------------------------
 echo.
 
 
-set /p letter=Please enter the project's letter(e.g. D), blank will use current letter: 
+set /p disk=Please enter the projects' disk(e.g. D), blank will use current disk: 
 set /p rootPath=Please enter the root folder path of prjects(e.g. src\imaibo), blank will use current folder:
 
 echo Please enter the backend profiles you want(e.g. local2qadb), 
@@ -30,8 +30,8 @@ set /p profiles=.    blank will use the first profiles in project's application.
 echo.
 echo.
 
-if defined letter (
-	cd %letter%:\
+if defined disk (
+	cd %disk%:\
 
 )
 
