@@ -12,7 +12,7 @@ echo                             iMaibo  FE
 echo.
 echo ---------------------------------------------------------------------
 echo.
-echo Please be sure imaibo-fe, imaibo-stockmarket, imaibo-portfolio project and redis DB（\Redis-x64-2.8.2101 folder）are in the same root folder, e.g.:
+echo Please be sure imaibo-fe, imaibo-stockmarket, imaibo-portfolio project and redis DB(\Redis-x64-2.8.2101 folder)are in the same root folder, e.g.:
 echo \root
 echo   \imaibo-fe
 echo   \imaibo-stockmarket
@@ -23,16 +23,24 @@ echo.
 
 
 set /p disk=Please enter the projects' disk(e.g. D), blank will use current disk: 
+echo.
+
 set /p rootPath=Please enter the root folder path of prjects(e.g. src\imaibo), blank will use current folder:
+echo.
 
 echo Please enter the backend profiles you want(e.g. local2qadb), 
-set /p profiles=.    blank will use the first profiles in project's application.yml:
+echo.    blank will use the first profiles in project's application.yml:
+set /p profiles=
+echo.
+
+set /p manualWaitRedisBoot=Do you need to wait for redis' boot manually? If your PC is slow, please enter Y.(Y/N, defualt as N):
 echo.
 echo.
 
+
+:: start run !
 if defined disk (
 	cd %disk%:\
-
 )
 
 
@@ -81,6 +89,12 @@ cd ..
 cd imaibo-stockmarket
 START cmd /C node app.js local
 cd ..
+
+If /I %manualWaitRedisBoot% == Y (
+	echo Please press any key when your redis has boot.
+	PAUSE
+)
+
 
 :: redirect to imaibo-portfolio
 cd imaibo-portfolio
