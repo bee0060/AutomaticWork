@@ -66,7 +66,7 @@ If NOT EXIST "imaibo-portfolio" (
 )
 
 echo Simple checking is successful, press any key to run fe env....
-PAUSE
+TIMEOUT /t 3
 
 echo on
 
