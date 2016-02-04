@@ -38,6 +38,19 @@ set /p manualWaitRedisBoot=Do you need to wait for redis' boot manually? If your
 echo.
 echo.
 
+set portalGradlewType=2
+SET portalGradlewCommon=DEV
+SET /p portalGradlewType=Boot portal by "bootRun" or "dev"?(1:bootRun; 2:dev, default as dev):
+echo.
+echo.
+
+
+If %portalGradlewType% EQU 1 (
+	set portalGradlewCommon=bootRun
+) else (
+	set portalGradlewCommon=dev
+)
+
 
 :: start run !
 if defined disk (
@@ -91,11 +104,10 @@ cd imaibo-stockmarket
 START cmd /C node app.js local
 cd ..
 
-If defined manualWaitRedisBoot (
-	If /I %manualWaitRedisBoot% == Y (
-		echo Please press any key when your redis has boot.
-		PAUSE
-	)
+
+If /I %manualWaitRedisBoot% == Y (
+	echo Please press any key when your redis has boot.
+	PAUSE
 )
 
 
@@ -118,9 +130,9 @@ cd ..
 cd portal
 
 if defined profiles (
-	START cmd /C gradlew bootRun -P SPRING.PROFILES.ACTIVE=%profiles%
+	START cmd /C gradlew %portalGradlewCommon% -P SPRING.PROFILES.ACTIVE=%profiles%
 ) else (
-	START cmd /C gradlew bootRun	
+	START cmd /C gradlew %portalGradlewCommon%	
 )
 
 cd ..
@@ -135,7 +147,7 @@ cd imaibo-fe
 START cmd /C node server.js local
 
 :: RUN gulp watch for fe
-START bash gulp watch
+START cmd /C gulp watch
 
 cd ..
 
