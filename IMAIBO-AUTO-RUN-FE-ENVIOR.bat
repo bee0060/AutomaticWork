@@ -101,7 +101,7 @@ cd ..
 
 :: RUN imaibo-stockmarket
 cd imaibo-stockmarket
-START cmd /C node app.js local
+START cmd /K node app.js local
 cd ..
 
 
@@ -119,9 +119,9 @@ cd imaibo-portfolio
 cd mock-auth-server
 
 if defined profiles (
-	START cmd /C gradlew bootRun -P SPRING.PROFILES.ACTIVE=%profiles%
+	START cmd /K gradlew bootRun -P SPRING.PROFILES.ACTIVE=%profiles%
 ) else (
-	START cmd /C gradlew bootRun
+	START cmd /K gradlew bootRun
 )
 
 cd ..
@@ -130,9 +130,9 @@ cd ..
 cd portal
 
 if defined profiles (
-	START cmd /C gradlew %portalGradlewCommon% -P SPRING.PROFILES.ACTIVE=%profiles%
+	START cmd /K gradlew %portalGradlewCommon% -P SPRING.PROFILES.ACTIVE=%profiles%
 ) else (
-	START cmd /C gradlew %portalGradlewCommon%	
+	START cmd /K gradlew %portalGradlewCommon%	
 )
 
 cd ..
@@ -144,7 +144,7 @@ cd ..
 cd imaibo-fe
 
 :: RUN express
-START cmd /C node server.js local
+START cmd /K node server.js local
 
 :: RUN gulp watch for fe
 START cmd /C gulp watch
