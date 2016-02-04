@@ -38,19 +38,6 @@ set /p manualWaitRedisBoot=Do you need to wait for redis' boot manually? If your
 echo.
 echo.
 
-set portalGradlewType=2
-SET portalGradlewCommon=DEV
-SET /p portalGradlewType=Boot portal by "bootRun" or "dev"?(1:bootRun; 2:dev, default as dev):
-echo.
-echo.
-
-
-If %portalGradlewType% EQU 1 (
-	set portalGradlewCommon=bootRun
-) else (
-	set portalGradlewCommon=dev
-)
-
 
 :: start run !
 if defined disk (
@@ -65,25 +52,25 @@ if defined rootPath (
 
 If NOT EXIST "Redis-x64-2.8.2101" (
 	echo Could not find redis folder, batch will fail and exit.
-	PAUSE
+	TIMEOUT /t 3
 	EXIT
 )
 
 If NOT EXIST "imaibo-fe" (
 	echo Could not find imaibo-fe folder, batch will fail and exit.
-	PAUSE
+	TIMEOUT /t 3
 	EXIT
 )
 
 If NOT EXIST "imaibo-stockmarket" (
 	echo Could not find imaibo-stockmarket folder, batch will fail and exit.
-	PAUSE
+	TIMEOUT /t 3
 	EXIT
 )
 
 If NOT EXIST "imaibo-portfolio" (
 	echo Could not find imaibo-portfolio folder, batch will fail and exit.
-	PAUSE
+	TIMEOUT /t 3
 	EXIT
 )
 
@@ -101,7 +88,7 @@ cd ..
 
 :: RUN imaibo-stockmarket
 cd imaibo-stockmarket
-START cmd /K node app.js local
+START cmd /C node app.js local
 cd ..
 
 
@@ -114,27 +101,19 @@ If /I %manualWaitRedisBoot% == Y (
 :: redirect to imaibo-portfolio
 cd imaibo-portfolio
 
+:: SET SPRING_PROFILES_ACTIVE param is need
+if defined profiles (
+	SET SPRING_PROFILES_ACTIVE=%profiles%
+)
 
 :: RUN mock-auth-server
 cd mock-auth-server
-
-if defined profiles (
-	START cmd /K gradlew bootRun -P SPRING.PROFILES.ACTIVE=%profiles%
-) else (
-	START cmd /K gradlew bootRun
-)
-
+START cmd /K gradlew bootRun
 cd ..
 
 :: RUN portal
 cd portal
-
-if defined profiles (
-	START cmd /K gradlew %portalGradlewCommon% -P SPRING.PROFILES.ACTIVE=%profiles%
-) else (
-	START cmd /K gradlew %portalGradlewCommon%	
-)
-
+START cmd /K gradlew bootRun
 cd ..
 
 :: back to root folder
