@@ -125,7 +125,8 @@ cd imaibo-fe
 :: RUN express
 START cmd /K node server.js local
 
-:: RUN gulp watch for fe
+:: RUN gulp and gulp watch for fe
+START cmd /C gulp
 START cmd /C gulp watch
 
 cd ..
