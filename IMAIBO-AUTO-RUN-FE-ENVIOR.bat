@@ -88,7 +88,7 @@ cd ..
 
 :: RUN imaibo-stockmarket
 cd imaibo-stockmarket
-START cmd /C node app.js local
+START cmd /K node app.js local
 cd ..
 
 
