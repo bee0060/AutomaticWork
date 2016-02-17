@@ -113,7 +113,7 @@ cd ..
 
 :: RUN portal
 cd portal
-START cmd /K gradlew bootRun
+START cmd /K java -jar build/libs/com-imaibo-portfolio-1.0.3.jar
 cd ..
 
 :: back to root folder
