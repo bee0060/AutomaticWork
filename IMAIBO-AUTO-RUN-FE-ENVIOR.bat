@@ -38,6 +38,18 @@ set /p manualWaitRedisBoot=Do you need to wait for redis' boot manually? If your
 echo.
 echo.
 
+set runType=1
+set /p runType=Which type do you want to run portal service? 1: gradlew bootRun; 2: jar (1/2, defualt as 1):
+echo.
+echo.
+
+If %runType% EQU 2 (
+	echo If you have updated the imaibo-portfolio code, please manually run 'gradlew build -x test' in imaibo-portfolio/portal folder, before run this bat.
+	echo.
+	echo.
+	PAUSE
+)
+
 
 :: start run !
 if defined disk (
@@ -102,7 +114,7 @@ If /I %manualWaitRedisBoot% == Y (
 cd imaibo-portfolio
 
 :: SET SPRING_PROFILES_ACTIVE param is need
-if defined profiles (
+If defined profiles (
 	SET SPRING_PROFILES_ACTIVE=%profiles%
 )
 
@@ -113,7 +125,13 @@ cd ..
 
 :: RUN portal
 cd portal
-START cmd /K java -jar build/libs/com-imaibo-portfolio-1.0.3.jar
+
+if %runType% EQU 2 (
+	:: bootstrap by jar
+	START cmd /K java -jar build/libs/com-imaibo-portfolio-1.0.3.jar
+) else (
+	START cmd /K gradlew bootRun
+)
 cd ..
 
 :: back to root folder
@@ -127,7 +145,7 @@ START cmd /K node server.js local
 
 :: RUN gulp and gulp watch for fe
 START cmd /C gulp
-START cmd /C gulp watch
+START cmd /K gulp watch
 
 cd ..
 
