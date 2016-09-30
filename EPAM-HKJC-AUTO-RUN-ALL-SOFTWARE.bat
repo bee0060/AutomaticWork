@@ -9,7 +9,7 @@
 TIMEOUT /t 3
 
 :: OPEN SUBLIME TEXT 2 IF NOT OPENED YET
-START "" "D:\Develop Tools\Sublime Text 2\sublime_text.exe"
+:: START "" "D:\Develop Tools\Sublime Text 2\sublime_text.exe"
 
 :: OPEN THE WEB PAGES ARE NEED
 START /max "" "https://jirapct.epam.com/jira/secure/RapidBoard.jspa?rapidView=39268&view=planning.nodetail"
