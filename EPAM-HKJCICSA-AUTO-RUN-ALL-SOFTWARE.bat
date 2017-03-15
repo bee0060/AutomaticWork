@@ -12,8 +12,7 @@ TIMEOUT /t 1
  ::START "" "D:\Program Files\Sublime Text 2\sublime_text.exe"
 
 :: OPEN THE WEB PAGES ARE NEED
-START /max "" "https://jirapct.epam.com/jira/secure/RapidBoard.jspa?rapidView=40750"
-START /max "" "https://jirapct.epam.com/jira/secure/RapidBoard.jspa?rapidView=40724"
+START /max "" "https://jirapct.epam.com/jira/secure/RapidBoard.jspa?rapidView=41104&projectKey=HKJCICSA"
 START /max "" "https://translate.google.com/?hl=zh-CN&tab=TT"
 START /max "" "https://pmc.epam.com/pmc/timejournal/list.do?projectId=4060741400037942733"
 START /max "" "https://kb.epam.com/display/HKJCICSA/HKJC+EPAM+DEV+Environment"
