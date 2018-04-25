@@ -29,18 +29,3 @@ START "" "C:\Users\Steven_Weng\AppData\Roaming\Microsoft\Internet Explorer\Quick
 
 
 :: LYNC WILL AUTO RUN WHEN LOGIN WINDOW
-
-
-:: DIRECT TO WORK FOLDER
-::cd D:\
-::cd "src\HKJC-ICSA"
-
-:: OPEN GIT BASH
-::START "" "D:\Program Files\Git\bin\sh.exe" --login -i
-
-:: RUN HTTP-SERVER AND WATCH
-::bash npm run dev
-
-
-:: PAUSE COMMAND FOR DEBUG
-:: PAUSE
