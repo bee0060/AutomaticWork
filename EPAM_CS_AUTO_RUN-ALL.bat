@@ -13,6 +13,8 @@ TIMEOUT /t 1
 START /max "" "https://translate.google.com.hk/?hl=zh-CN"
 START /max "" "https://github.com/"
 START /max "" "https://partner-sg.credit-suisse.com/vpn/partner.html"
+:: WECHAT
+START /max "" "https://wx.qq.com/"
 
 :: OPEN THE PERSONAL SOFTWARE
 START "" "C:\Program Files (x86)\Tencent\QQ\Bin\QQ.exe"
