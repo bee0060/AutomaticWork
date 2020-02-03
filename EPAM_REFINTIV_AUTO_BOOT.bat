@@ -2,6 +2,7 @@
 :: AUTO OPEN ALL SOFTWARES, WEBSITES NEEDDE, FOR REFINTIV.	::
 :: AUTHOR: STEVEN WENG 									                    ::
 :: CREATED ON: 2020/01/06								                    ::
+:: LAST UPDATED ON: 2020/02/03								                    ::
 :: =========================================================::
 
 
@@ -39,7 +40,13 @@ START /max "" "https://elf.int.refinitiv.com/elements/coral-accordion.html"
 START /max "" "https://git.sami.int.thomsonreuters.com/"
 
 :: OPEN LOCAL CCW ENVIRONMENT
-START /max "" "http://localhost:8080/"
+START /max "" "http://localhost:8080/" --new-window
+
+:: Project startup
+:: CCW START
+START /D "D:\src\refinitiv\workflow-mock-server" ccw start
+:: MOCK SERVER START
+START /D "D:\src\refinitiv\workflow-mock-server" npm start
 
 :: OPEN OUTLOOK ON TASK BAR
 START "" "C:\Users\Steven_Weng\AppData\Roaming\Microsoft\Internet Explorer\Quick Launch\User Pinned\TaskBar\Outlook"
