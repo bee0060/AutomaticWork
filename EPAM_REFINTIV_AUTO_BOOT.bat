@@ -44,9 +44,9 @@ START /max "" "http://localhost:8080/" --new-window
 
 :: Project startup
 :: CCW START
-START /D "D:\src\refinitiv\workflow-mock-server" ccw start
+::START /D "D:\src\refinitiv\workflow-mock-server" ccw start
 :: MOCK SERVER START
-START /D "D:\src\refinitiv\workflow-mock-server" npm start
+::START /D "D:\src\refinitiv\workflow-mock-server" npm start
 
 :: OPEN OUTLOOK ON TASK BAR
 START "" "C:\Users\Steven_Weng\AppData\Roaming\Microsoft\Internet Explorer\Quick Launch\User Pinned\TaskBar\Outlook"
